@@ -4,7 +4,10 @@
     <table>
     {% for post in post_list %}
     <tr>
-        <td><a href="{% url "blog.views.post_detail" post.pk %}">{{ post.title }}</a></td>
+        <td>
+            <a href="{% url "blog.views.post_detail" post.pk %}">{{ post.title }}</a>
+            Like {{ post.like_count }}
+        </td>
     </tr>
     {% endfor %}
     </table>
