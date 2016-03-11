@@ -6,7 +6,11 @@
     <tr>
         <td>
             <a href="{% url "blog.views.post_detail" post.pk %}">{{ post.title }}</a>
-            Like {{ post.like_count }}
+
+            Like <span id="post_{{ post.id }}_like_count">{{ post.like_count }}</span>
+            <span class="post_like_button"
+                data-url="{% url "blog.views.post_like" post.pk %}"
+                data-target-id="post_{{ post.id }}_like_count">좋아요</span>
         </td>
     </tr>
     {% endfor %}
